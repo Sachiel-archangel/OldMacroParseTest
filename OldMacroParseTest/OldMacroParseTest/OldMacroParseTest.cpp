@@ -55,9 +55,7 @@ int Decompress(void *pMem, DWORD dwSize, LPCWSTR pStreamName)
 	memset(test, 0x00, sizeof(test));
 
 	HMODULE hd = LoadLibrary(L"ntdll.dll");
-	//				HMODULE hd = GetModuleHandle(L"LZNT1Decompress.dll");
 	FARPROC proc = GetProcAddress(hd, "RtlDecompressBuffer");
-	//				LPRTLDECOMPRESSBUFFER WINAPI lpRtlDecompressBuffer = reinterpret_cast<LPRTLDECOMPRESSBUFFER>(proc);
 	LPRTLDECOMPRESSBUFFER lpRtlDecompressBuffer = reinterpret_cast<LPRTLDECOMPRESSBUFFER>(proc);
 
 	// 頭出し
